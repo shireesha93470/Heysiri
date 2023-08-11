@@ -1,0 +1,15 @@
+sudo snap install intellij-idea-community --classic
+intellij-idea-community
+sudo apt update
+sudo apt-get install mysql-server
+ sudo apt update && sudo apt upgrade
+sudo apt install  mysql-server
+sudo mysql_secure_installation
+no
+no
+yes
+yes
+yes
+yes
+sudo mysql -u root -p
+
