@@ -1,0 +1,25 @@
+//         const [data, setData] = useState([]);
+
+//         const handleClick = async() => {
+//                 await axios.post('http://localhost:8080/api/v1/doctors', {
+//                         "id": 7,
+//                         "userName": "Ankitha ",
+//                         "phoneNumber": "9845151400",
+//                         "emailId": "anki@mgail.com",
+//                         "password": "anki123",
+//                         "address": "Banglore",
+//                         "experience": "7 years",
+//                         "qualification": "MBBS.MD",
+//                         "specialization": "orthopedic"
+//                 }).then(function (response) {
+//                         console.log(response);
+//                 }).catch(function (error) {
+//                         console.log(error);
+//                 });
+//         }
+
+//         return (<div>
+//                 <button onClick={handleClick}>click</button>
+//         </div>
+
+//         )
