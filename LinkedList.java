@@ -276,7 +276,7 @@ public class LinkedList {
         Node current = previous.next;
         previous.next=null;
         while (current != null) {
-            Node temp = current;
+            Node temp = current;                                                                                
             current = current.next;
             temp.next = previous;
             previous = temp;
@@ -284,7 +284,32 @@ public class LinkedList {
 
         return previous;
     }
-
+    public static void findMiddle(Node start)
+    {
+    	if(start==null)
+    	{
+    		System.out.println("Empty");
+    		return;
+    	}
+    	Node traverse=start;
+    	int length=0;
+    	while(traverse!=null)
+    	{
+    		length++;
+    		traverse=traverse.next;
+    	}
+    	int mid=length/2;
+    	int position=0;
+    	 traverse=start;
+    	while(position!=mid)
+    	{
+    		position++;
+    		traverse=traverse.next;
+    	}
+    	System.out.println(traverse.data);    	
+    	
+    
+    }
     public static void main(String[] args) {
         System.out.println("----------insert---------------");
         LinkedList.insert(1);
@@ -311,6 +336,9 @@ public class LinkedList {
         first=LinkedList.reverse(first);
 
         LinkedList.display();
+        
+        System.out.println("----------------middle-----------");
+       LinkedList.findMiddle(first);
     }
 }
 

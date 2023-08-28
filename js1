@@ -1,0 +1,1196 @@
+            Part-1 Evaluation
+
+	
+1.console.log(1);
+setTimeout(function () {
+console.log(2);
+}, 0);
+Promise.resolve()
+.then(function () {
+console.log(3);
+})
+.then(function () {
+      console.log(4);
+});
+
+Ans:1,3,4,2
+
+2.function func(){ 
+let x = 10;
+ if(true) { 
+let y = 20; 
+console.log(x);
+ 		console.log(y);
+ }
+ 	console.log(x);
+ 	console.log(y);
+ }
+ func();
+
+ Ans:10,20,10,Error
+
+
+3. function fun1( fun2, a ){   
+ 	  console.log( fun2() , a);
+   }
+   fun1( function fun2(){
+  return “Hello”; return “World”;
+   }, 200  );
+
+ Ans:Error
+		
+4. function listFruits () {
+ if(true) {
+const fruit1 = "orange"; 
+let fruit2 = "avocado"; 
+var fruit3 = "banana"; 
+ }
+console.log(fruit3);
+}
+
+listFruits();
+
+Ans:banana
+
+5.const greeting = "Hello ";
+console.log(greeting + name);
+name = "Patience";
+console.log(greeting + name)
+let age = 1;
+console.log("You're " + age);
+age = 5; 
+console.log("You're " + age);
+var name = "Sarah";
+
+Ans:undefined,patience,1,5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************************************************************
+Part-2 Evaluation
+1.Javascript is synchronous, then how does JS achieve asynchronous behavior? Explain in detail.
+	Javascript is  synchronous because it executes the code line by line .sometimes javascript achieves asynchronous behavior used in event loops.In event loops asynchronous code first it will go through the call stack queue and after it will be executed in call stack.
+Call stack is a part of the javascript engine.Event loop manages the execution of code.
+Call stack is a structure where the code can be executed line by line like LIFO in call stack.
+Local storage ,setTimeout,fetch() are all web API's. It is a part of the web browser.
+First the code will check in web ApI and it transfers to the call back queue after the call back queue checks the code the event loop is running and moves to the call stack if the code is not there then the event loop can take the first function for execution.
+
+2.What is undefined in JS ? Is it falsy or truthy ? (Self Study)
+	In javascript undefined is a value that represents the absence of  value.
+It is falsy it is a boolean type.it is declared but i cannot assigned a value.if u can declared a variable without assigning the value it can automatically declared the value “Undefined”;
+For example:
+		Let a;
+		console.log(a);
+	
+Output:undefined
+
+3.What is “resolve” and “reject” in Javascript ? 
+Resolve:  When the function is successfully completed or the asynchronous code is successfully fulfilled then the function can be resolved..then() will be invoked to resolve the value.
+
+Example:const Promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("successful");
+  }, 500);
+});
+
+Promise1.then((result) => {
+  console.log(result);
+})
+.catch((error) => {
+  console.error(error);
+});
+
+
+Reject:When the function or asynchronous operation has failed or it is showing an error then the .catch() will handle the arrow.
+
+Example:
+	const Promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("rejected ");
+  }, 500);
+});
+
+Promise1.then((result) => {
+  console.log(result);
+}).catch((error) => {
+  console.error( error);
+});
+
+4.Write the Higher Order Function used in the promise.
+A higher order function is a function that takes one or more functions as arguments and returns the functions its results .It takes as function and returns new .
+Example:function greet(name,translate){
+	return ‘Hello,${translate(name};
+	
+	Function uppercase(name){
+		return name.toUpperCase();
+       }
+       Function lowercase(name){
+	Return name.lowercase();
+    }
+	
+5.What are the differences between declaring variables using var, let and const? What is hoisting?
+Var:var can be redeclared and re-assigned within the scope.var is a global variable.variable var is hoisted to the top of the scope.it means it moved to the top of the function.
+Example:var a=10;
+
+Let:let means block-scoped variable it means it executes within the block.it is only accessible after declaring statements.it is resigned but not re-declared.
+Example:let a=10;
+
+
+Const:const variable is also block-scoped variable.const means it is constant it cannot be changed if u try to change the variable it will show error.const is not hoisted to the top of the scope it can be initialized at the time of declaration. 
+Example:const a=10;
+
+
+Hoisting:Hoisting means the variable is hoisted to the top of the scope; it means the variable can be moved to the top of the function.
+********************************************************************************************************************************
+part-3
+
+ 1.Change the color of a button using JS. 
+
+<body>
+<button>button</button>
+</body>
+<script>
+let button= document.querySelector("button")
+button.onclick =function myfunction(){
+button.innerHTML="siri";
+button.style.backgroundColor="aqua";
+button.style.height="100px";
+button.style.width="100px";
+button.style.borderRadius="20px";
+button.style.fontSize="20px";
+console.log(button);
+}
+
+2.Solve the CSS battle 
+	
+
+3.Create an empty object. Then fill the fields “name”, “address”, “phone number” into the object
+const person = {};
+
+person.name  = "siri";
+person.address = "Banglore";
+person.phoneNumber = "123456778";
+
+console.log(person.name);
+console.log(person.address);
+console.log(person.phoneNumber);
+
+4.Write a function that returns “Hello” if x > 100, Otherwise return “Bye”.
+	function hello(x) {
+    
+    if (x > 100) {
+        return "Hello";
+    } else {
+        return "Bye";
+    }
+}
+let value=300;
+let y=hello(value)
+console.log(y);
+
+let num=20;
+let b=hello(num);
+console.log(b);
+
+5.Write a Higher Order Function which takes the following function as argument.
+function( ){   return “I am a function”    }
+The HOF returns “I am a function 100”
+    function myFunction(function1) {
+    return function() {
+        return function1() + " 100";
+    };
+}
+
+function Function3() {
+    return "I am a function";
+}
+
+var function2 = myFunction(Function3);
+console.log(function2()); 
+
+19 - 08 -2023
+Problems on Promises(Find output)
+Problem 1
+ const promise = new Promise((resolve, reject) => {    
+  setTimeout(() => {
+    resolve('Result');
+  }, 200);
+});
+
+promise.then((res) => {
+  console.log(res);
+}, (err) => {
+  alert(err);
+});
+
+Problem 2 
+const promise = new Promise((resolve, reject) => {
+  const res = true;
+  // An asynchronous operation.
+  if (res) {
+    resolve('Resolved!');
+  }
+  else {
+    reject(Error('Error'));
+  }
+});
+
+promise.then((res) => console.log(res), (err) => alert(err));
+
+Problem 3
+ const promise = new Promise((resolve, reject) => {  
+  setTimeout(() => {
+    reject(Error('Promise Rejected Unconditionally.'));
+  }, 1000);
+});
+
+promise.then((res) => {
+  console.log(value);
+});
+
+promise.catch((err) => {
+  alert(err);
+});
+
+Problem 4
+ const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(3);
+  }, 300);
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 200);
+});
+Promise.all([promise1, promise2]).then((res) => {
+  console.log(res[0]);
+  console.log(res[1]);
+});
+
+Problem 5
+ const executorFn = (resolve, reject) => {
+  resolve('Resolved!');
+};
+const promise = new Promise(executorFn);
+
+Problem 6
+ const promise = new Promise((resolve, reject) => {    
+  setTimeout(() => {
+    resolve('Result');
+  }, 200);
+});
+
+promise.then((res) => {
+  console.log(res);
+}, (err) => {
+  alert(err);
+});
+
+Problem 7
+ const loginAlert = () =>{
+  alert('Login');
+};
+setTimeout(loginAlert, 6000);
+
+Problem 8
+ const promise = new Promise((resolve, reject) => {  
+  setTimeout(() => {
+    resolve('*');
+  }, 1000);
+});
+
+const twoStars = (star) => {  
+  return (star + star);
+};
+
+const oneDot = (star) => {  
+  return (star + '.');
+};
+
+const print = (val) => {
+  console.log(val);
+};
+
+// Chaining them all together
+promise.then(twoStars).then(oneDot).then(print);
+
+Problem 9
+ const executorFn = (resolve, reject) => {
+  console.log('The executor function of the promise!');
+};
+const promise = new Promise(executorFn);
+
+
+
+Problems on Callback Functions
+Callback Basics
+1 . function greeting(name, callback) {
+    console.log(`Hello, ${name}!`);
+    callback();
+}
+function farewell() {
+    console.log("Goodbye!");
+}
+greeting("John", farewell);
+
+Asynchronous Callback
+2 . function fetchUserData(callback) {
+    setTimeout(() => {
+        const userData = "User data fetched!";
+        callback(userData);
+    }, 2000);
+}
+function displayMessage(message) {
+    console.log(message);
+}
+fetchUserData(displayMessage);
+
+Error Handling Callback
+3 . function processTask(successCallback, errorCallback) {
+    const randomValue = Math.random();
+
+    if (randomValue > 0.5) {
+        successCallback("Task completed successfully");
+    } else {
+        errorCallback("Task failed");
+    }
+}
+function onSuccess(result) {
+    console.log("Success:", result);
+}
+function onError(error) {
+    console.error("Error:", error);
+}
+processTask(onSuccess, onError);
+Nesting Callbacks
+4 . function first(callback) {
+    console.log("First function");
+    callback();
+}
+function second() {
+    console.log("Second function");
+}
+first(() => {
+    second();
+});
+Callback Hell
+5 . function outer(callback) {
+    console.log("Outer function");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+function middle(callback) {
+    console.log("Middle function");
+    setTimeout(() => {
+        callback();
+    }, 500);
+}
+function inner() {
+    console.log("Inner function");
+}
+
+outer(() => {
+    middle(() => {
+        inner();
+    });
+});
+
+Using Callbacks with Array
+6 . const numbers = [1, 2, 3, 4, 5];
+function double(number, callback) {
+    callback(number * 2);
+}
+numbers.forEach(num => {
+    double(num, result => {
+        console.log(result);
+    });
+});
+this in Callbacks
+7 . const person = {
+    name: "Alice",
+    greet: function(callback) {
+        console.log(`Hello, ${this.name}!`);
+        callback();
+    }
+};
+function farewell() {
+    console.log(`Goodbye, ${this.name}!`);
+}
+person.greet(farewell);
+
+Callback and Scope
+8 . const value = 10;
+function increment(callback) {
+    const value = 5;
+    callback(value + 1);
+}
+increment(result => {
+    console.log(result);
+});
+
+Promises and Callbacks
+9 . function fetchDataUsingPromise() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Data fetched using Promise");
+        }, 1500);
+    });
+}
+fetchDataUsingPromise().then(result => {
+    console.log(result);
+});
+function fetchDataUsingCallback(callback) {
+    setTimeout(() => {
+        callback("Data fetched using Callback");
+    }, 1000);
+}
+fetchDataUsingCallback(result => {
+    console.log(result);
+});
+
+Using Callbacks with Event Listeners
+10 . const button = document.getElementById("myButton");
+button.addEventListener("click", () => {
+    console.log("Button clicked!");
+});
+
+
+Problems on Higher Order Functions 
+
+Problem 1: Map Transformation
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map(num => num * 2);
+console.log(doubledNumbers); 
+
+Problem 2: Filter Even Numbers
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); 
+
+Problem 3: Reduce Sum
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum);
+Problem 4: Map Names to Initials
+const names = ["Alice Smith", "Bob Johnson", "Charlie Brown"];
+const initials = names.map(name => {
+    const [firstName, lastName] = name.split(" ");
+    return `${firstName[0]}${lastName[0]}`;
+});
+console.log(initials); 
+
+Problem 5: Filter Unique Values
+const numbers = [1, 2, 2, 3, 4, 4, 5, 5, 5];
+const uniqueNumbers = numbers.filter((num, index, array) => array.indexOf(num) === index);
+console.log(uniqueNumbers); 
+
+Problem 6: Filter Long Words
+const words = ["apple", "banana", "grape", "orange", "strawberry"];
+const maxLength = 5;
+const longWords = words.filter(word => word.length > maxLength);
+console.log(longWords); 
+
+Problem 7: Reduce Maximum Value
+const numbers = [12, 5, 8, 21, 9];
+const maxNumber = numbers.reduce((max, current) => Math.max(max, current), -Infinity);
+console.log(maxNumber); 
+
+Problem 8: Map Names to Uppercase
+const names = ["Alice", "Bob", "Charlie", "David"];
+const uppercaseNames = names.map(name => name.toUpperCase());
+console.log(uppercaseNames); 
+
+Problem 9: Filter Prime Numbers
+function isPrime(number) {
+    if (number <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+    }
+    return true;
+}
+
+const numbers = [2, 4, 7, 10, 13, 16, 19, 22];
+const primeNumbers = numbers.filter(isPrime);
+console.log(primeNumbers); 
+
+Problem 10: Reduce Average
+const numbers = [10, 20, 30, 40, 50];
+const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+const average = sum / numbers.length;
+console.log(average); 
+
+
+Problems on Event Loops
+Problem 1: setTimeout Order
+console.log("Start");
+setTimeout(() => {
+    console.log("Timeout 1");
+}, 0);
+console.log("Middle");
+setTimeout(() => {
+    console.log("Timeout 2");
+}, 0);
+console.log("End");
+
+Problem 2: setInterval
+let count = 0;
+const intervalId = setInterval(() => {
+    count++;
+    console.log("Interval:", count);
+    if (count === 5) {
+        clearInterval(intervalId);
+    }
+}, 1000);
+
+Problem 3: Asynchronous Function
+function delayedLog(message, delay) {
+  setTimeout(() => {
+        console.log(message);
+    }, delay);
+}
+console.log("Start");
+delayedLog("Delayed Message", 2000);
+console.log("End");
+
+Problem 4: Event Loop with Promises
+console.log("Start");
+Promise.resolve()
+    .then(() => {
+        console.log("Promise 1");
+    })
+    .then(() => {
+        console.log("Promise 2");
+    });
+console.log("End");
+
+Problem 5: Event Loop with Callbacks
+console.log("Start");
+function asyncFunction(callback) {
+    setTimeout(() => {
+        console.log("Async Function");
+        callback();
+    }, 0);
+}
+asyncFunction(() => {
+    console.log("Callback");
+});
+console.log("End");
+
+Problem 6: Chained Promises
+function asyncFunction(value) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+     resolve(value);
+        }, 1000);
+    });
+}
+asyncFunction("A")
+    .then(result => {
+        console.log(result);
+        return asyncFunction("B");
+    })
+    .then(result => {
+        console.log(result);
+        return asyncFunction("C");
+    })
+    .then(result => {
+        console.log(result);
+    });
+
+Problem 7: Concurrent Promises
+function asyncFunction(value) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(value);
+        }, Math.random() * 1000);
+    });
+}
+
+Promise.all([
+    asyncFunction("A"),
+    asyncFunction("B"),
+    asyncFunction("C")
+]).then(results => {
+    console.log(results);
+});
+
+Problem 8: Callback Hell with setTimeout
+setTimeout(() => {
+   console.log("Timeout 1");
+    setTimeout(() => {
+        console.log("Timeout 2");
+        setTimeout(() => {
+            console.log("Timeout 3");
+        }, 100);
+    }, 500);
+}, 1000);
+
+Problem 9: Event Loop and User Input
+console.log("Start");
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+document.addEventListener("click", () => {
+    console.log("Click event");
+});
+console.log("End");
+
+Problem 10: Async/Await
+function asyncFunction(value) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(value);
+        }, 1000);
+    });
+}
+async function main() {
+    const result1 = await asyncFunction("A");
+    console.log(result1);
+    const result2 = await asyncFunction("B");
+    console.log(result2);
+    const result3 = await asyncFunction("C");
+    console.log(result3);
+}
+main();
+
+Problems on Let, Var, Const
+
+1 . function myFn() {
+    var x = 10;
+    console.log(x); 
+   }
+   console.log(x);
+
+Answer : 
+
+
+2 . if (true) {
+    		let x = 10;
+    		console.log(x); 
+
+}
+console.log(x);
+Answer :
+
+3 . var x = 30;
+console.log(x); 
+x = "Hi"; 
+console.log(x);
+Answer : 
+
+4 . var y = 10;
+console.log(y); 
+var y = "Hello"; 
+console.log(y)
+Answer :
+
+5 . let x = 11;
+console.log(x); 
+x = "IB"; 
+console.log(x);
+Answer :
+
+6 . let y = 12;
+console.log(y);
+let y = "Scaler";
+Answer:
+
+7 . let z = 13;
+if(true){
+  let z = "Fun"; 
+  console.log(z) 
+}
+console.log(z)
+Answer :
+
+8 . const x = 10;
+console.log(x); 
+x = 11;
+Answer :
+
+9. const y;
+y = 2;
+Answer :
+
+10 . const z = 12;
+console.log(z) 
+const z = 13;
+Answer :
+
+11 . console.log(x); 
+var x = 100;
+console.log(x); 
+Answer :
+
+12 . console.log(y); 
+let y = 200;
+console.log(y); 
+Answer :
+
+13 . console.log(z); 
+const z = 300;
+console.log(z); 
+Answer :
+
+                                                            CSS
+                                                    Day-1  Aug 5th 2023
+
+CSS Borders
+
+https://www.w3schools.com/cssref/css3_pr_border-radius.
+
+https://www.csssolid.com/css-position.html
+
+https://cssbattle.dev/play/1
+
+CSS Borders
+
+
+                                                          Javascript
+
+                                                             Day-1  Aug 5th 2023
+
+
+
+https://subhra.hashnode.dev/all-about-javascript-event-loop
+
+JavaScript Fundamentals - Tutorial
+
+https://cedricklupembe.hashnode.dev/what-are-the-differences-between-var-let-and-const-in-javascript
+
+Day-2 - August 7 2023
+
+1. let, var, const - examples 
+2. hoisting 
+3. html document to tree 
+4. Javascript program phase: Parsing phase, Execution phase
+
+Ref: 1. https://cssbattle.dev/battle/1 
+2.https://cedricklupembe.hashnode.dev/what-are-the-differences-between-var-let-and-const-in-javascript 
+3. https://javascript.info/first-steps
+
+
+
+
+Hoisting
+What are the differences between var, let, and const in JavaScript?
+
+Ex: 1
+function func() { 
+var x = 5;
+      if(1) { 
+          var y = 10; 
+                  console.log(x);
+      console.log(y); 
+      } 
+  } 
+func(); 
+console.log(x); 
+console.log(y);
+
+Ex: 2
+function func()
+ { 
+let x = 10;
+ if(true) { 
+let y = 20; 
+console.log(x);
+ console.log(y);
+ }
+ console.log(x);
+ console.log(y);
+ }
+ func();
+
+Ex: 3
+function func() { 
+console.log(x); 
+console.log(y); 
+var x = 10; 
+let y = 20;
+ }
+func();
+
+Today Home Work : 
+Css battles 
+https://cssbattle.dev/play/2
+ https://cssbattle.dev/play/3 
+Bonus:
+Target #4 (Ups n Downs) - CSSBattle 
+https://cssbattle.dev/play/5 
+Target #6 (Missing Slice) - CSSBattle 
+revise previous concepts. 
+
+Read: 
+callback, 
+promise, 
+closure, 
+DOMelements
+
+
+
+
+	Day-3 - August 8 2023
+
+
+
+To Learn:
+class in JS --> objects, new keyword
+
+
+let myPromise = new Promise(function(resolve, reject) {
+  
+  let x = 10;
+
+  // The producing code (this may take some time)
+
+  if (x == 0) {
+    const data = { name: "Gagan", work: "Code", language: "Javascript" };
+    resolve(data);
+  } else {
+    reject( {errorName: "RefError", description: "not found"} );
+  }
+  
+});
+
+// myPromise.then( data => console.log(data) );
+// console.log(myPromise)
+
+myPromise
+.then( data => console.log(data) )
+.catch( error => console.log(error) );
+
+
+// Arrow function example
+// data => console.log(data)
+
+
+
+// Higher Order Function
+// function fun( function2, a ){ // function function2(){console.log(100)}
+//     console.log( function2() , a);
+// }
+
+
+// function function2(){
+//     return 100;
+// }
+
+
+// fun( function2 , 200  );
+
+To Read:
+Assignment:
+https://betterprogramming.pub/10-javascript-promise-challenges-before-you-start-an-interview-c9af8d4144ec
+https://climbtheladder.com/javascript-promise-interview-questions/ (Point 1 to 8 )
+Arrow Function : https://www.w3schools.com/js/js_arrow_function.asp (don’t read this concept, read rest other things in the page)
+Promise: JavaScript Promises
+First 6 pages of website: https://www.w3schools.com/js/default.asp (2 already completed )
+Higher Order Function
+
+
+11  August-08   2023
+
+const codingClass = {
+  students: [],
+  studentAges: {},
+  addStudent: function(studentName) {
+    this.students.push(studentName);
+  },
+  addStudentAge: function(studentName, age) {
+    this.studentAges[studentName] = age;
+  },
+  getStudentAge: function(studentName) {
+    return this.studentAges[studentName];
+  },
+  printStudents: function() {
+    for (const student of this.students) {
+      console.log(student);
+    }
+  }
+};
+codingClass.addStudent('Nandana');
+codingClass.addStudentAge('Nandana', 21);
+console.log(codingClass.getStudentAge('Nandana'));
+codingClass.printStudents();
+
+To Practice
+https://www.w3scho1ols.com/js/js_objects.asp
+
+https://javascript.info/object-basics
+
+Create an object calculator with three methods: 
+read(a,b) provides two values and saves them as object properties with names a and b respectively. 
+sum() returns the sum of saved values. 
+mul() multiplies saved values and returns the result. Let
+
+
+const calculator ={ 
+//declaration for a,b properties 
+read:function(a,b){ 
+//implement code 
+}
+ mult:function(){ 
+//implement code
+ } 
+sum: function(a,b){ 
+//implement code 
+} 
+}
+
+ 
+const calculator ={ 
+//declaration for a,b properties 
+read:function(a,b){ 
+//implement code 
+} 
+mult:function(){
+ //implement code
+ } 
+sum: function(){
+ //implement code
+ }
+
+http://flexboxfroggy.com/ 
+
+
+https://cssgridgarden.com/
+
+
+
+
+
+
+14 - 08 - 2023
+
+const calculator = (operation,a, b )=>{ 
+} 
+calculator(operationCallback, a,b)
+ calculator(sumCallBack, a,b) 
+calculator(sumCallBack, 2,3) 
+5
+ calculator(multiplyCallBack, 2,3) 
+6
+ const calculator = (operationCallback, a, b) => {
+ return operationCallback(a, b); 
+} 
+const add = (a, b) => a + b;
+ const subtract = (a, b) => a - b;
+ const multiply = (a, b) => a * b; 
+const divide = (a, b) => a / b; 
+const result1 = calculator(add, 1 , 1); 
+const result2 = calculator(subtract, 2, 1);
+ const result3 = calculator(multiply, 3, 4);
+ const result4 = calculator(divide, 4, 3); 
+console.log(result1); 
+console.log(result2);
+ console.log(result3); 
+console.log(result4);
+ const calculator = (operation,a, b )=>{ 
+return a+b; 
+} 
+const calculator1 = (operation,a, b )=>{ 
+return a-b;
+ } 
+const calculator2 = (operation,a, b )=>{
+ return a*b;
+ }
+ console.log(calculator("+", 2,3)); 
+console.log(calculator1("-", 2,3)); 
+console.log(calculator2("*", 2,3));
+ function myfunction(x, y, Callback) { 
+const result = Callback(x, y); 
+console.log( ${result}); 
+} 
+function add(x, y) {
+ return x + y; 
+}
+ function multiply(x, y) {
+ return x * y; 
+} 
+myfunction(5, 3, add); 
+myfunction(5, 3, multiply);
+ Topics to cover
+ copy references 
+Generic 2- level deep copy
+copy of array
+ const inp = [ {a:"1"}, {b:"2"}]
+ const copy = [ {a:"1"}, {b:"2"}]
+
+
+
+Study Material:
+Fetch in JS https://www.youtube.com/watch?v=cuEtnrL9-H0
+A fetch() function is available in the global window object. The fetch() function takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise, whether it is successful or not. If request is successful .then() function will receive Response object, if request fails then .catch() function will receive an error object
+https://medium.com/beginners-guide-to-mobile-web-development/the-fetch-api-2c962591f5c
+
+Callback Function https://www.youtube.com/watch?v=btj35dh3_U8
+Closure https://www.youtube.com/watch?v=qikxEIxsXco
+Assignment
+Using an API — https://randomuser.me/api
+Using the fetch() method in ES6 JavaScript to grab data from the API.
+Displaying the fetched data from the API in a HTML page.
+
+
+Get all people's names from this endpoint (https://swatpi.dev/api/people) using a promise (async)?
+The promise should return an array like this ["Santosh", "Jack"]...something like this
+Fetch the data
+Results is array of objects
+Iterate through results array
+Extract names from each object and print it
+
+
+=> using Object.keys() get all values of a object...do not use Object.values()
+or Object.entries()
+
+
+const books = {
+  name: "siri",
+  lastname: "reddy",
+  year: 2002,
+
+
+};
+const bookValues = Object.keys(books).map(key => books[key]);
+console.log(bookValues); 
+
+
+
+
+
+
+=> return an array whose name length greater than 5
+use filter
+["Santosh","Jack"] => ["Santosh"]
+
+
+
+
+function filter(names) {
+  return names.filter(name => name.length > 5);
+}
+const names = ["siri","hey siri","kiran","narik"];
+const filterNames = filter(names);
+console.log(filterNames);
+
+
+//currying function
+
+function add(x) 
+{
+    return function(y) 
+    {
+        if (y !== undefined) 
+        {
+             return add(x + y);
+        } else 
+        {
+            return x; 
+        }
+   }
+}
+console.log(add(1)(3)(5)(10)(15)(20)()); 
+//Hoisting is a javascript behaviour where variables and function declaration are moved to the top of the scope during code excution.
+// console.log(x);
+// var x=10;
+// foo();
+// function foo(){
+//     console.log("siri");
+// }
+// ***************************************************************************
+// var:var is a global variable,it can be redeclared and reassigned,it can be hoisted.
+// let:let is a block scope,it cannot be redeclared and it can be reassigned,it connot be hoisted
+// const:const is also same like as block scope variable ,it cannot be redeclared and connot be reassigned and it is constant if u are trying to change it will show an error,it can't be hoisted
+// *************************************************************************
+// Higher-order function:higher order function is function that accepts functions as parameters and returns a function.
+// callbackfunction:callback function it passes arguments to the another function.
+//   function operations(callback)
+//   {
+//       console.log("perform operations");
+//       callback();
+//   }
+//   function callback()
+//   {
+//       console.log("adding");
+//   }
+//   operations(callback);
+//*************************************************************************
+// closures:closure is a function bind together with its lexical scope to form a colsure
+// function x(){
+//     var a=7;
+
+// function y(){
+//     console.log(a);
+// }
+// y();
+// }
+// x();
+//*************************************************************************
+// console.log(a);
+// var a=10;
+
+// function operation(callback){
+//     console.log("perform");
+//     callback();
+// }
+// function callback()
+// {
+//     console.log("adding");
+// }
+// operation(callback);
+
+function x()
+{
+    var a=10;
+    function y(){
+        console.log(a);
+    }
+    y();
+}
+x();
+
+
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
