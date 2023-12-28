@@ -1,0 +1,422 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+       }
+       body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background: #081b29; */
+            background: #12ac8e;
+       }
+       .wrapper {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background: transparent;
+        border: 2px solid #0ef;
+        overflow: hidden;
+        /* box-shadow: 0 0 25px #0ef; */
+       }
+       .wrapper .form-box {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+       }
+       .wrapper .form-box.login {
+        left: 0;
+        padding: 0 40px;
+       }
+       .form-box h2 {
+        font-size: 32px;
+        color: white;
+        text-align: center;
+       }
+       .form-box .input-box {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 25px 0;
+     }
+     .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom:2px solid #fff;
+        color: #fff;
+        
+     }
+     .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+     }
+     .input-box input:focus ~ label,
+     .input-box input:valid ~ label {
+        top: -5px;
+     }
+     .input-box i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #fff;
+     }
+     .btn5 {
+        position: relative;
+        width: 100%;
+        height: 45px;
+        background: transparent;
+        border: 2px solid #081b29;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+        z-index: 1;
+        overflow: hidden;
+     }
+     .btn5::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 300%;
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        /* background: linear-gradient(#081b29, #0ef, #081b29, #0ef); */
+        transition: 0.5s;
+     }
+     .btn5:hover::before {
+        top: 0;
+     }
+     .form-box .logreg-link {
+        font-size: 14.5px;
+        color: #fff;
+        text-align: center;
+        margin: 20px 0 10px;
+     }
+     .logreg-link p a {
+        color: #081b29;
+        text-decoration: none;
+        font-weight: 600;
+     }
+     .logreg-link p a:hover {
+        text-decoration: underline;
+     }
+     .wrapper .info-text {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+     }
+     .wrapper .info-text.login {
+        right: 0;
+        text-align: right;
+        padding: 0 40px 60px 150px;
+     }
+     .info-text h2 {
+        font-size: 36px;
+        color: #fff;
+        line-height: 1.3;
+        text-transform: uppercase;
+     }
+     .info-text p {
+        font-size: 16px;
+        color: #fff;
+     }
+     .wrapper .bg-animate {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1500px;
+        height: 600px;
+        background: linear-gradient(50deg, #081b29, #081b29);
+        transform: rotate(8deg) skewY(40deg);
+        transform-origin: bottom right;
+        border-bottom: 3px solid #0ef;
+     }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <div class="form-box login">
+            <h2>Signup</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Name</label>
+                    <i class='bx bxs-user-circle' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Email-Id</label>
+                    <i class='bx bx-envelope' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>PhoneNumber</label>
+                    <i class='bx bx-phone'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <button type="submit" class="btn5">Signup</button>
+                <div class="logreg-link">
+                    <p>Alredy have an account?<a href="#" class="register-link">Signup</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2>Welcome Back!</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #12ac8e;
+        }
+        .custom-wrapper {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: transparent;
+            border: 2px solid #0ef;
+            overflow: hidden;
+        }
+        .custom-wrapper .custom-form-box {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .custom-wrapper .custom-form-box.signup {
+            left: 0;
+            padding: 0 40px;
+        }
+        .custom-form-box h2 {
+            font-size: 32px;
+            color: white;
+            text-align: center;
+        }
+        .custom-form-box .custom-input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 25px 0;
+        }
+        .custom-input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+        }
+        .custom-input-box label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        .custom-input-box input:focus ~ label,
+        .custom-input-box input:valid ~ label {
+            top: -5px;
+        }
+        .custom-input-box i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #fff;
+        }
+        .custom-button {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: 2px solid #081b29;
+            outline: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .custom-button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 300%;
+            top: -100%;
+            left: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        .custom-button:hover::before {
+            top: 0;
+        }
+        .custom-form-box .custom-logreg-link {
+            font-size: 14.5px;
+            color: #fff;
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+        .custom-logreg-link p a {
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .custom-logreg-link p a:hover {
+            text-decoration: underline;
+        }
+        .custom-wrapper .custom-info-text {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .custom-wrapper .custom-info-text.login {
+            right: 0;
+            text-align: right;
+            padding: 0 40px 60px 150px;
+        }
+        .custom-info-text h2 {
+            font-size: 36px;
+            color: #fff;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        .custom-info-text p {
+            font-size: 16px;
+            color: #fff;
+        }
+        .custom-wrapper .custom-bg-animate {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1500px;
+            height: 600px;
+            background: linear-gradient(50deg, #081b29, #081b29);
+            transform: rotate(8deg) skewY(40deg);
+            transform-origin: bottom right;
+            border-bottom: 3px solid #0ef;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-wrapper">
+        <span class="custom-bg-animate"></span>
+        <div class="custom-form-box signup">
+            <h2>Signup</h2>
+            <form action="#">
+                <div class="custom-input-box">
+                    <input type="text" required>
+                    <label>Name</label>
+                    <i class='bx bxs-user-circle' ></i>
+                </div>
+                <div class="custom-input-box">
+                    <input type="text" required>
+                    <label>Email-Id</label>
+                    <i class='bx bx-envelope' ></i>
+                </div>
+                <div class="custom-input-box">
+                    <input type="text" required>
+                    <label>PhoneNumber</label>
+                    <i class='bx bx-phone'></i>
+                </div>
+                <div class="custom-input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="custom-input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <button type="submit" class="custom-button">Signup</button>
+                <div class="custom-logreg-link">
+                    <p>Already have an account?<a href="#" class="custom-register-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="custom-info-text login">
+            <h2>Welcome Back!</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
